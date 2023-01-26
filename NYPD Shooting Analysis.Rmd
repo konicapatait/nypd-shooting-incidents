@@ -14,7 +14,7 @@ library(lubridate)
 ```
 
 # NYPD Shooting Incident Analysis
-This report is based on an NYPD shooting incident that is publicly available on [data.gov](https://catalog.data.gov/dataset/nypd-shooting-incident-data-historic) site and captures all the happenings inNew York for the years 2006-2021.
+This report is based on an NYPD shooting incident that is publicly available on [data.gov](https://catalog.data.gov/dataset/nypd-shooting-incident-data-historic) site and captures all the incidents reported in New York for the years 2006-2021.
 
 The agenda of this report is to analyze on below:
 
@@ -128,7 +128,7 @@ plot.by.age <- ggplot(data = incidents.by.age, aes(x=AGE_GROUP, y=NUM_VICTIMS, g
   geom_point(aes(color='NUM_VICTIMS')) +
   geom_line(aes(y= NUM_PERPETRATOR, color='NUM_PERPETRATOR')) +
   geom_point(aes(y=NUM_PERPETRATOR, color = 'NUM_PERPETRATOR')) +
-  labs(x = "Age Group", y = "Number of Incidents", title="NYPD Shooting analysis by Age") +
+  labs(x = "Age Group", y = "Number of Incidents", title="NYPD shooting analysis by Age") +
   theme(legend.position = 'bottom', axis.text.x = element_text(angle=90)) 
 plot.by.age
 ```
@@ -141,7 +141,7 @@ The below plots show the shooting incident trend over the years and the time dur
 plot.by.year <- ggplot(data = incidents.by.year, aes(x=factor(YEAR), y=NUM_INCIDENTS, group = 1) ) +
   geom_line(aes(color='NUM_INCIDENTS')) + 
   geom_point(aes(color='NUM_INCIDENTS')) +
-  labs(x = "Year", y = "Number of Incidents", title="NYPD Shooting analysis by Years") +
+  labs(x = "Year", y = "Number of Incidents", title="NYPD shooting analysis by Years") +
   theme(legend.position = 'bottom', axis.text.x = element_text(angle=90))
 plot.by.year
 ```
@@ -151,7 +151,7 @@ plot.by.year
 plot.by.time <- ggplot(data = incidents.by.time, aes(x=factor(INTERVAL), y=NUM_INCIDENTS, group = 1) ) +
   geom_line(aes(color='NUM_INCIDENTS')) + 
   geom_point(aes(color='NUM_INCIDENTS')) +
-  labs(x = "Time", y = "Number of Incidents", title="NYPD Shooting analysis by Time") +
+  labs(x = "Time", y = "Number of Incidents", title="NYPD shooting analysis by Time") +
   theme(legend.position = 'bottom', axis.text.x = element_text(angle=90))
 plot.by.time
 
